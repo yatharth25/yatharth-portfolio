@@ -187,6 +187,6 @@ const experience = document.getElementById("experience");
 experience.innerText =
   (new moment().year() - year).toString() +
   (new moment().month() > month
-    ? `.${moment().month() - month}+`
+    ? `.${moment().month() - month + 1}+`
     : "+"
   ).toString();
