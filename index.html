@@ -1157,8 +1157,7 @@
                 <form
                   class="contact-form scroll-animation"
                   data-animation="fade_from_bottom"
-                  method="POST"
-                  action="https://home/HTML/yatharth/mailer.php"
+                  id="contact-form"
                 >
                   <div
                     class="alert alert-success messenger-box-contact__msg"
@@ -1166,6 +1165,13 @@
                     role="alert"
                   >
                     Your message was sent successfully.
+                  </div>
+                  <div
+                    class="alert alert-danger messenger-box-contact__msg-error"
+                    style="display: none"
+                    role="alert"
+                  >
+                    There was an error sending your message. Please try again or email directly at yatharthdevelops@gmail.com
                   </div>
                   <div class="row">
                     <div class="col-md-6">
@@ -1219,12 +1225,28 @@
                         <label for="budget"
                           >your budget <span>(optional)</span></label
                         >
-                        <input
-                          type="number"
-                          name="budget"
-                          id="budget"
-                          placeholder="A range budget for your project"
-                        />
+                        <div class="budget-input-wrapper">
+                          <input
+                            type="number"
+                            name="budget"
+                            id="budget"
+                            placeholder="A range budget for your project"
+                          />
+                          <select
+                            name="currency"
+                            id="currency"
+                            class="currency-selector"
+                          >
+                            <option value="USD">USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="GBP">GBP (£)</option>
+                            <option value="INR" selected>INR (₹)</option>
+                            <option value="CAD">CAD (C$)</option>
+                            <option value="AUD">AUD (A$)</option>
+                            <option value="JPY">JPY (¥)</option>
+                            <option value="CNY">CNY (¥)</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -1279,6 +1301,7 @@
     <script src="assets/js/lightbox.min.js"></script>
 
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="assets/js/ajax-form.js"></script>
     <script src="assets/js/color.js"></script>
   </body>

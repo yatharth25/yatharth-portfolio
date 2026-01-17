@@ -684,6 +684,21 @@
   .contact-area .contact-content .contact-form .input-group.submit-btn-wrap .theme-btn:active {
     transform: scale(0.98);
   }
+  .contact-area .contact-content .contact-form .input-group .budget-input-wrapper {
+    flex-direction: row;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .contact-area .contact-content .contact-form .input-group .budget-input-wrapper input {
+    min-width: 0;
+    font-size: 16px;
+  }
+  .contact-area .contact-content .contact-form .input-group .budget-input-wrapper .currency-selector {
+    width: 130px;
+    min-width: 130px;
+    font-size: 16px;
+    padding: 10px 35px 10px 0;
+  }
 
   .breadcrumb-area .breadcrumb-content h1 {
     font-size: 30px;
