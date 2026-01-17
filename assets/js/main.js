@@ -181,12 +181,38 @@ function onMailClick() {
   // window.location.target = "_blank";
   window.open("mailto:yatharthdevelops@gmail.com", "_blank");
 }
-const year = 2021;
-const month = 5;
-const experience = document.getElementById("experience");
-experience.innerText =
-  (new moment().year() - year).toString() +
-  (new moment().month() > month
-    ? `.${moment().month() - month + 1}+`
-    : "+"
-  ).toString();
+
+// Calculate years of experience from May 2021
+function calculateExperience() {
+  const startDate = new Date(2021, 4, 1); // May 2021 (month is 0-indexed, so 4 = May)
+  const currentDate = new Date();
+  
+  let years = currentDate.getFullYear() - startDate.getFullYear();
+  let months = currentDate.getMonth() - startDate.getMonth();
+  
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  const experience = document.getElementById("experience");
+  if (experience) {
+    if (months > 0) {
+      experience.innerText = years + "." + months + "+";
+    } else {
+      experience.innerText = years + "+";
+    }
+  }
+}
+
+// Calculate experience when DOM is ready
+$(document).ready(function() {
+  calculateExperience();
+  
+  // Add class to items with logos to hide default dot
+  $(".resume-timeline .item").each(function() {
+    if ($(this).find(".company-logo").length > 0) {
+      $(this).addClass("has-logo");
+    }
+  });
+});

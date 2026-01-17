@@ -958,6 +958,29 @@ body .body-overlay {
 .resume-area .resume-content .resume-timeline .item:hover .date {
   color: #c0c0c0;
 }
+.resume-area .resume-content .resume-timeline .item .company-logo {
+  position: absolute;
+  left: -24px;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 3px solid #565656;
+  background: #1f1f1f;
+  padding: 6px;
+  transition: 0.3s;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.resume-area .resume-content .resume-timeline .item:hover .company-logo {
+  border-color: #c0c0c0;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(192, 192, 192, 0.3);
+}
+.resume-area .resume-content .resume-timeline .item.has-logo::before {
+  display: none;
+}
 
 /* 12 - Services */
 .services-area {
@@ -1153,10 +1176,10 @@ body .body-overlay {
   color: #c0c0c0;
 }
 .testimonial-item .testimonial-item-inner > p {
-  font-size: 24px;
+  font-size: 16px;
   color: #fff;
   font-weight: 300;
-  line-height: 36px;
+  line-height: 26px;
   margin-bottom: 27px;
 }
 .testimonial-item .testimonial-item-inner .project-btn {
